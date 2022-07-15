@@ -3,6 +3,7 @@ import { useState } from "react";
 import IconButton from '@mui/material/IconButton';
 import FormatAlignLeftIcon from '@mui/icons-material/FormatAlignLeft';
 import ToggleButton from '@mui/material/ToggleButton';
+import girl from "./img/mygirl.png"
 import "./App.css";
 export default function App() {
 
@@ -54,7 +55,7 @@ export default function App() {
   return (
     <>
       <div className="container-fluid">
-        
+
         <div className="row justify-content-center">
           <div className="col-md-2  card shadow  mx-auto d-none d-sm-block">
             <div className="sidebar">
@@ -114,7 +115,7 @@ export default function App() {
                   <i className="fa fa-users" aria-hidden="true"></i> &nbsp;&nbsp; <li><a href="">Team</a></li>
                 </div>
                 <div className="d-flex align-items-center py-3">
-                  <i className="fa fa-comments" aria-hidden="true"></i> &nbsp;&nbsp; <li><a href="">help/Support</a></li>
+                  <i className="fa fa-comments" aria-hidden="true"></i> &nbsp;&nbsp; <li><a href="">Help/Support</a></li>
                 </div>
               </ul>
 
@@ -124,16 +125,30 @@ export default function App() {
 
           {/* ye desktop ka hi */}
           {/* ye desktop ka hi */}
-          <div className="col-md-10">
+          <div className="col-md-10 bg-teal">
             <div className="searchbar d-md-block d-none">
               <input type="search" onChange={search} value={values.name} className="shadow topbar_search" placeholder="search by account name or website" />
             </div>
             <div className="row">
-            <div className="col-md-10 mx-auto mt-5 p-5">
-            <h1>Increase your pipeline</h1>
-                    <h1>by <span style={{ color: "red" }}>35-150%</span></h1>
-                    <p>Automated account intelligence for your account team.</p>
-            </div>
+              <div className="position-relative">
+                {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 620"><path fill="#eeee" fill-opacity="1" d="M0,392L80,325C590,330,120,378,480,344C790,290,800,424,1060,540C1170,596,1280,624,6360,308L1440,392L1440,0L1360,0C1280,0,1120,0,960,0C800,0,40,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg> */}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,256L60,229.3C120,203,240,149,360,128C480,107,600,117,720,149.3C840,181,960,235,1080,234.7C1200,235,1320,181,1380,154.7L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
+              </div>
+              <div className="col-md-10 mx-auto mt-5 p-md-5 position-absolute pipline">
+
+                 <div className="row justify-content-between">
+                  <div className="col-md-6 offset-1">
+                  <h1>Increase your pipeline</h1>
+                <h1>by <span style={{ color: "red" }}>35-150%</span></h1>
+                <p>Automated account intelligence for your account team.</p>
+                  </div>
+                  <div className="col-md-5">
+                    <div className="jumping_girl">
+                      <img src={girl} className="girl_img" alt="jumping girl" />
+                    </div>
+                  </div>
+                 </div>
+              </div>
               <div className="col-md-12">
                 <div className="header">
                   <div className="elements">
@@ -159,14 +174,63 @@ export default function App() {
                   </div>
                 </div>
               </div>
+
+            </div>
+
+            <div className="col-md-12">
+              <div className="Customcard">
+                <div className="">
+                  <h1 className="text-center Trusted_h1 my-3">
+                    Trusted by enterprise sales teams golobally.
+                  </h1>
+                </div>
+                <div className="row d-flex justify-content-center my-5 ">
+                  <div className="col-auto"><a href="#Salesloft" className="Salesloft">Salesloft.</a> </div>
+                  <div className="col-auto"><a href="#ZETWORK" className="ZETWORK">ZETWORK</a> </div>
+                  <div className="col-auto"><a href="#auditoria" className="auditoria lead">AUDITORIA* </a> </div>
+                  <div className="col-auto"><a href="#entropick" className="entropick">entropick <sub><small className="smallTech">TECH</small></sub>  </a> </div>
+                  <div className="col-auto"><a href="#capilary" className="capilary">capillary</a> </div>
+
+                </div>
+              </div>
+            </div>
              
-            </div>  
-       
-         
+
+            <div className="row justify-content-center mb-5">
+              <div className="col-auto">
+                <h1>Hear from our customer</h1>
+              </div>
+              </div> 
+
+            <div className="row my-5">
+              
+              <div className="col-md-6">
+                  <div className="leftcard">
+                   <div className="card py-2">
+                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae quasi unde cum 
+                    illo enim a nihil modi facere eum architecto, amet incidunt quidem eligendi autem totam
+                     officiis rerum dolore illum.
+                   </div>
+                  </div>
+              </div>
+              <div className="col-md-6">
+                 <div className="rightcard">
+                      <div className="card py-2">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat id quam neque 
+                  blanditiis atque, laboriosam incidunt culpa voluptatem. Ratione nostrum dignissimos
+                   quae laudantium nemo iusto unde, eum fugiat quibusdam sapiente.
+                      </div>
+                 </div>
+              </div>
+            </div>
+
+
           </div>
+
+
         </div>
-        
-      </div>  
+
+      </div>
 
       {/* side bar */}
       {/* side bar */}
@@ -186,7 +250,7 @@ export default function App() {
             <div className="searchbar">
               <a class="btn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
                 <ToggleButton value="right" aria-label="right aligned">
-                  <FormatAlignLeftIcon  />
+                  <FormatAlignLeftIcon />
                 </ToggleButton>
               </a>
             </div>
@@ -221,7 +285,7 @@ export default function App() {
               </div>
               <ul>
                 <div className="d-flex align-items-center my-2">
-                  <i className="fa fa-home" aria-hidden="true"></i> &nbsp;&nbsp; <li><a href="" className="dashboard">Daswwhboard</a></li>
+                  <i className="fa fa-home" aria-hidden="true"></i> &nbsp;&nbsp; <li><a href="" className="dashboard">Dashboard</a></li>
                 </div>
                 <div className="d-flex align-items-center my-2">
                   <i className="fa fa-star" aria-hidden="true"></i> &nbsp;&nbsp; <li><a href="#Intels">Intels</a></li>
