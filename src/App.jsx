@@ -4,6 +4,7 @@ import IconButton from '@mui/material/IconButton';
 import FormatAlignLeftIcon from '@mui/icons-material/FormatAlignLeft';
 import ToggleButton from '@mui/material/ToggleButton';
 import girl from "./img/mygirl.png"
+import bman from "./img/bman.png"
 import "./App.css";
 export default function App() {
 
@@ -177,7 +178,7 @@ export default function App() {
 
             </div>
 
-            <div className="col-md-12">
+            <div className="col-md-12 mx-auto">
               <div className="Customcard">
                 <div className="">
                   <h1 className="text-center Trusted_h1 my-3">
@@ -202,24 +203,42 @@ export default function App() {
               </div>
               </div> 
 
-            <div className="row my-5">
+            <div className="row my-5 justify-content-center">
               
-              <div className="col-md-6">
-                  <div className="leftcard">
-                   <div className="card py-2">
-                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae quasi unde cum 
-                    illo enim a nihil modi facere eum architecto, amet incidunt quidem eligendi autem totam
-                     officiis rerum dolore illum.
+              <div className="col-md-5 fontFam">
+                  <div className="d-flex leftcard ">
+                   <div className="d-flex shadow card p-3 flex-row justify-content-around align-items-center">
+                   
+                     <div className="d-flex  flex-column justify-content-between">
+                   
+                      <b className="py-1"><span ><i   className="fa fa-quote-left customerRe" aria-hidden="true"></i></span> set up a conversation with a <br />
+                      hard-to-crack-account, widthn a week 
+                      of starting with B2Brain.
+                       </b>
+                       
+                       <small>Augie Hoffmann, SDR Manager</small>
+                       <small>FOURKITES</small>
+                     </div>
+                     <img src={bman} className="img-fluid bman_img" alt="img" />
                    </div>
                   </div>
               </div>
-              <div className="col-md-6">
+              <div className="col-md-5">
                  <div className="rightcard">
-                      <div className="card py-2">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat id quam neque 
-                  blanditiis atque, laboriosam incidunt culpa voluptatem. Ratione nostrum dignissimos
-                   quae laudantium nemo iusto unde, eum fugiat quibusdam sapiente.
-                      </div>
+                 <div className="d-flex shadow card p-3 flex-row justify-content-around align-items-center ">
+                   
+                   <div className="d-flex w-75 flex-column justify-content-between">
+                 
+                    <b className="py-1"><span ><i   className="fa fa-quote-left customerRe" aria-hidden="true"></i></span> set up a conversation with a <br />
+                    hard-to-crack-account, widthn a week
+                    of starting with B2Brain.
+                     </b>
+                     
+                     <small>Augie Hoffmann, SDR Manager</small>
+                     <small>FOURKITES</small>
+                   </div>
+                   <img src={bman} className="bman_img" alt="img" />
+                 </div>
                  </div>
               </div>
             </div>

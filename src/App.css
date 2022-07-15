@@ -164,6 +164,10 @@ a {
     
         
     }
+    
+    .rightcard{
+        height: 19vh!important;
+    }
 }
 
 @media (min-width:575px) and (max-width:768px) {
@@ -266,14 +270,14 @@ a {
 }
 
 .leftcard{
-    height: 50vh;
+    height: 55vh;
     display: flex;
     justify-content: start;
     flex-direction: column;
     
 }
 .rightcard{
-    height: 50vh;
+    height: 55vh;
     display: flex;
     justify-content: end;
     flex-direction: column;
@@ -285,3 +289,16 @@ a {
 .leftcard .card{
     border-radius: .75rem!important;
    }
+
+.customerRe{
+    color: salmon !important;
+    font-size: 2rem;
+}
+
+.fontFam{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.bman_img{
+    width: 15%!important;
+}
