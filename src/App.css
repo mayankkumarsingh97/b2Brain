@@ -3,15 +3,16 @@
   padding:0;
   box-sizing: border-box;
 }
+
 i{
     color: rgb(174, 172, 172)!important;
 }
 body{
-    background-color: rgb(152, 68, 68);
+    /* background-color: rgb(152, 68, 68); */
     font-size: 1.1rem!important;
 }
 input::placeholder{
-    color:rgb(192, 183, 183);
+    color:rgb(109, 106, 106);
 }
 ul{
     padding: 0!important;
@@ -38,7 +39,7 @@ a{
 
 .card{
     margin:0 0 !important;  
-    padding: 0 0px!important;
+    padding: 0 10px!important;
     background-color: #fff!important;
     border-radius: 0px!important;
     /* box-shadow: 1px 2px 4px 10px #eee; */
@@ -57,6 +58,7 @@ a{
 .searchbar input{
     width: 100%;
     border: none;
+    outline: none!important;
     
 }
 .searchbar input:focus{
@@ -65,12 +67,17 @@ a{
 }
 
 .searchbar{
+    /* display: flex;
+    justify-content: flex-start;
+    flex-direction: column; */
+    width: 100%;
     padding:0 0;
 }
 
 .topbar_search{
     /* border-radius: .75rem; */
     padding:1rem 1rem;
+    width: 100%;
 }
 
 .logo{
@@ -88,6 +95,30 @@ a{
     padding:0 0 0 4rem;
     font-weight: 400;
     /* font-family:Verdana, Geneva, Tahoma, sans-serif; */
+}
+@media (max-width:575px) {
+    .header{
+        padding:0 0 0 2.4rem;
+    }
+    .topbar_search{
+        /* border-radius: .75rem; */
+        padding:.75rem .65rem;
+        width: 100%;
+    }
+    input::placeholder{
+        color:rgb(109, 106, 106);
+        font-size:14px;
+        }
+        .searchbar input{
+            width: 98%;
+
+            
+        }
+
+        .mapReturn{
+         margin-top:5rem;
+         flex-wrap: wrap;
+        }
 }
 .header p{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
