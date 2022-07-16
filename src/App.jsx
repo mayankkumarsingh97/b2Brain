@@ -12,7 +12,9 @@ export default function App() {
     name: "",
   })
 
-  const [showData, SetShowData] = useState([])
+  const [showData, SetShowData] = useState([
+    
+  ])
   console.log(showData, 'yeeeeeeeeeeeeeeeeeeeee')
 
   const search = (event) => {
@@ -124,21 +126,20 @@ export default function App() {
             </div>
           </div>
 
-          {/* ye desktop ka hi */}
-          {/* ye desktop ka hi */}
-          <div className="col-md-10 bg-teal">
+
+          <div className="col-md-10 bg-teal" id="TheContent">
             <div className="searchbar d-md-block d-none">
               <input type="search" onChange={search} value={values.name} className="shadow topbar_search" placeholder="search by account name or website" />
             </div>
             <div className="row">
               <div className="position-relative">
-                {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 620"><path fill="#eeee" fill-opacity="1" d="M0,392L80,325C590,330,120,378,480,344C790,290,800,424,1060,540C1170,596,1280,624,6360,308L1440,392L1440,0L1360,0C1280,0,1120,0,960,0C800,0,40,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg> */}
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,256L60,229.3C120,203,240,149,360,128C480,107,600,117,720,149.3C840,181,960,235,1080,234.7C1200,235,1320,181,1380,154.7L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
+
+
               </div>
               <div className="col-md-10 mx-auto mt-5 p-md-5 position-absolute pipline">
 
                  <div className="row justify-content-between">
-                  <div className="col-md-6 offset-1">
+                  <div className="col-md-6 offset-md-1">
                   <h1>Increase your pipeline</h1>
                 <h1>by <span style={{ color: "red" }}>35-150%</span></h1>
                 <p>Automated account intelligence for your account team.</p>
@@ -197,9 +198,9 @@ export default function App() {
             </div>
              
 
-            <div className="row justify-content-center mb-5">
+            <div className="row justify-content-center mb-2">
               <div className="col-auto">
-                <h1>Hear from our customer</h1>
+                <h1 className="Trusted_h1">Hear from our customer</h1>
               </div>
               </div> 
 
@@ -263,11 +264,11 @@ export default function App() {
 
       {/* moblie side click menu */}
       {/* moblie side click menu */}
-      <div className="container d-md-none d-block fixed-top">
-        <div className="row justify-content-around align-items-center">
+      <div className="container d-md-none d-block fixed-top " >
+        <div className="row justify-content-around align-items-center" style={{backgroundColor:"#eee"}}>
           <div className="col-2">
             <div className="searchbar">
-              <a class="btn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+              <a className="btn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
                 <ToggleButton value="right" aria-label="right aligned">
                   <FormatAlignLeftIcon />
                 </ToggleButton>
@@ -286,16 +287,13 @@ export default function App() {
 
 
 
-      {/* Jo side se aata hai */}
-      {/* Jo side se aata hai */}
-      {/* Jo side se aata hai */}
       <div className="bg-secondary">
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas offcanvas-start" tabIndex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
           <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasExampleLabel">B2Brain</h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
-          <div class="offcanvas-body bg-secondary">
+          <div className="offcanvas-body bg-secondary">
             <div className="sidebar">
 
               <div className="logo mb-1 ">

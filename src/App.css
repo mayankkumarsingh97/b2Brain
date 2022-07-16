@@ -1,14 +1,17 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
+}
+body{
+    background-color: #eee;
+}
+@media (prefers-reduced-motion: no-preference) {
+    :root {
+        scroll-behavior: smooth;
+    }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-}
 * {
     margin: 0;
     padding: 0;
@@ -95,8 +98,8 @@ a {
 
 }
 
- h1{
-    font-weight: 700!important;
+h1 {
+    font-weight: 700 !important;
 }
 
 .topbar_search {
@@ -125,8 +128,12 @@ a {
 .pipline {
     top: 5rem;
 
-    
+
 }
+
+/* mQ for mobile and extra small devices */
+/* mQ for mobile and extra small devices */
+/* mQ for mobile and extra small devices */
 
 @media (max-width:575px) {
     .header {
@@ -161,14 +168,19 @@ a {
 
     .pipline {
         top: 1.9rem;
-    
-        
+
+
     }
-    
-    .rightcard{
-        height: 19vh!important;
+
+    .rightcard {
+        height: 19vh !important;
     }
 }
+
+/* mQ for small devices but not effect extra small dev */
+/* mQ for small devices but not effect extra small dev */
+/* mQ for small devices but not effect extra small dev */
+/* mQ for small devices but not effect extra small dev */
 
 @media (min-width:575px) and (max-width:768px) {
     .sidebar ul li a {
@@ -217,28 +229,32 @@ a {
 }
 
 .Customcard {
-    margin-top:11rem;
+    margin-top: 11rem;
     margin-bottom: 6rem;
     padding: 3rem 0;
     border-top: 2px solid #eee;
     border-bottom: 2px solid #eee;
-    box-shadow: 0 0 0 3px  #eee;
+    /* box-shadow: 0 0 0 3px  #eee; */
 
 }
 
+/* mQ ll apply only on tablet and samll devices */
+/* mQ ll apply only on tablet and samll devices */
+/* mQ ll apply only on tablet and samll devices */
 @media (min-width:768px) {
     .Customcard {
         margin-top: 3rem;
     }
 }
 
-.smallTech{
+.smallTech {
     font-size: .6rem;
 }
-.star{
+
+.star {
     font-size: 1.9rem;
     font-weight: 800;
-    padding:0;
+    padding: 0;
     margin: 0;
 }
 
@@ -265,40 +281,42 @@ a {
 /* Jumping girl  */
 /* Jumping girl  */
 
-.girl_img{
+.girl_img {
     max-width: 90%;
 }
 
-.leftcard{
+.leftcard {
     height: 55vh;
     display: flex;
     justify-content: start;
     flex-direction: column;
-    
+
 }
-.rightcard{
+
+.rightcard {
     height: 55vh;
     display: flex;
     justify-content: end;
     flex-direction: column;
 }
 
- .rightcard .card{
- border-radius: .75rem!important;
+.rightcard .card {
+    border-radius: .75rem !important;
 }
-.leftcard .card{
-    border-radius: .75rem!important;
-   }
 
-.customerRe{
+.leftcard .card {
+    border-radius: .75rem !important;
+}
+
+.customerRe {
     color: salmon !important;
     font-size: 2rem;
 }
 
-.fontFam{
+.fontFam {
     font-family: 'Times New Roman', Times, serif;
 }
 
-.bman_img{
-    width: 15%!important;
+.bman_img {
+    width: 15% !important;
 }
