@@ -67,7 +67,7 @@ a {
 }
 
 .sidebar {
-    height: 200vh;
+    min-height: 100vh;
     /* background-color: #eee; */
     display: flex;
     flex-direction: column;
@@ -126,7 +126,7 @@ h1 {
 }
 
 .pipline {
-    top: 5rem;
+    margin-top: 4rem!important;
 
 
 }
@@ -136,8 +136,16 @@ h1 {
 /* mQ for mobile and extra small devices */
 
 @media (max-width:575px) {
+    .pipline{
+        margin-top:5rem!important;
+    }
+    .Customcard {
+        margin-top: 1rem!important;
+    }
     .header {
         padding: 0 0 0 2.4rem;
+        height: 114vh;
+        font-size: .9rem;
     }
 
     .topbar_search {
@@ -175,6 +183,9 @@ h1 {
     .rightcard {
         height: 19vh !important;
     }
+    .elements{
+        margin-top: 5rem;
+    }
 }
 
 /* mQ for small devices but not effect extra small dev */
@@ -207,9 +218,7 @@ h1 {
     font-size: .9rem;
 }
 
-.elements {
-    margin-top: 15rem;
-}
+
 
 .mapReturn {
     display: flex;
@@ -230,7 +239,7 @@ h1 {
 }
 
 .Customcard {
-    margin-top: 11rem;
+    /* margin-top: 15rem!important; */
     margin-bottom: 6rem;
     padding: 3rem 0;
     border-top: 2px solid #eee;
@@ -283,7 +292,8 @@ h1 {
 /* Jumping girl  */
 
 .girl_img {
-    max-width: 90%;
+    max-width: 100%;
+    height: auto;
 }
 
 .leftcard {
@@ -320,4 +330,11 @@ h1 {
 
 .bman_img {
     width: 15% !important;
+}
+
+
+.track_btn{
+    background-color: #eee!important;
+    color: #000 !important;
+    padding:.0 .24rem!important;
 }

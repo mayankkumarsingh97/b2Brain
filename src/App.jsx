@@ -57,19 +57,19 @@ export default function App() {
 
     }
     if(values.name!=""){
-      document.getElementById('TheContent').style.visibility="hidden";
-      document.getElementById('TheCustomCard').style.visibility="hidden";
-      document.getElementById('customerReview').style.visibility="hidden";
-      document.getElementById('TheCardReview').style.visibility="hidden";
-      document.getElementById('dynamic_content').style.visibility="visible";
+      document.getElementById('TheContent').style.display="none";
+      document.getElementById('TheCustomCard').style.display="none";
+      document.getElementById('customerReview').style.display="none";
+      document.getElementById('TheCardReview').style.display="none";
+      document.getElementById('dynamic_content').style.display="block";
       asyncGetCall();
        }
       else if(values.name==""){
-        document.getElementById('TheContent').style.visibility="visible";
-        document.getElementById('TheCustomCard').style.visibility="visible";
-        document.getElementById('customerReview').style.visibility="visible";
-        document.getElementById('TheCardReview').style.visibility="visible";
-        document.getElementById('dynamic_content').style.visibility="hidden";
+        document.getElementById('TheContent').style.display="block";
+        document.getElementById('TheCustomCard').style.display="block";
+        document.getElementById('customerReview').style.display="block";
+        document.getElementById('TheCardReview').style.display="flex";
+        document.getElementById('dynamic_content').style.display="none";
         
     } 
   }, [values.name])
@@ -152,21 +152,18 @@ export default function App() {
               <input type="search" onChange={search} value={values.name} className="shadow topbar_search" placeholder="search by account name or website" />
             </div>
             <div className="row">
-              <div className="position-relative">
-
-
-              </div>
-              <div className="col-md-10 mx-auto mt-5 p-md-5 position-absolute pipline" id="TheContent">
+           
+              <div className="col-md-10 mx-auto  px-md-5  pipline" id="TheContent">
 
                 <div className="row justify-content-between">
-                  <div className="col-md-6 offset-md-1">
+                  <div className="col-md-5 offset-md-1">
                     <h1>Increase your pipeline</h1>
                     <h1>by <span style={{ color: "red" }}>35-150%</span></h1>
                     <p>Automated account intelligence for your account team.</p>
                   </div>
-                  <div className="col-md-5">
+                  <div className="col-md-6 mr-auto">
                     <div className="jumping_girl">
-                      <img src={girl} className="girl_img" alt="jumping girl" />
+                      <img src={girl} className="girl_img mb-5" alt="jumping girl" />
                     </div>
                   </div>
                 </div>
@@ -179,14 +176,16 @@ export default function App() {
                         return <div className="mapReturn">
                           <div className="pic">
                             <div style={{ display: "flex", padding: "3px" }}>
-                              <img src="" alt="img alt" />
+                              <div>
+                                <img src={bman} className="img-fluid" style={{height:"35px"}} alt="" />
+                              </div>
                               <p>{item.vertical}</p>
                             </div>
                           </div>
                           <div className="content">
                             {item.company}
                           </div>
-                          <div className="btn btn-primary">
+                          <div className="btn btn-primary track_btn">
                             Track
                           </div>
                         </div>
