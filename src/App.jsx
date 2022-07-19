@@ -13,9 +13,11 @@ export default function App() {
   })
 
   const [showData, SetShowData] = useState([
-    
+
+
   ])
-  console.log(showData, 'yeeeeeeeeeeeeeeeeeeeee')
+
+
 
   const search = (event) => {
     event.persist();
@@ -25,35 +27,53 @@ export default function App() {
 
     }));
     console.log(values.name)
-    asyncGetCall();
+
 
   }
 
-  // useEffect(() => {
+  useEffect(() => {
+    const asyncGetCall = async () => {
+      try {
+        const response = await fetch(`https://tva.staging.b2brain.com/search/autocomplete_org_all/?q=${values.name}`,{
 
-  const asyncGetCall = async () => {
-    try {
-      const response = await fetch(`https://tva.staging.b2brain.com/search/autocomplete_org_all/?q=${values.name}`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        },
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
 
-      });
-      const data = await response.json();
-      console.log(data)
-      SetShowData(data)
+          },
 
 
+        });
+        const data = await response.json();
+        console.log(data)
+        SetShowData(data)
+
+
+
+      }
+      catch (error) {
+        console.log(error)
+      }
 
     }
-    catch (error) {
-      console.log(error)
-    }
-  }
+    if(values.name!=""){
+      document.getElementById('TheContent').style.visibility="hidden";
+      document.getElementById('TheCustomCard').style.visibility="hidden";
+      document.getElementById('customerReview').style.visibility="hidden";
+      document.getElementById('TheCardReview').style.visibility="hidden";
+      document.getElementById('dynamic_content').style.visibility="visible";
+      asyncGetCall();
+       }
+      else if(values.name==""){
+        document.getElementById('TheContent').style.visibility="visible";
+        document.getElementById('TheCustomCard').style.visibility="visible";
+        document.getElementById('customerReview').style.visibility="visible";
+        document.getElementById('TheCardReview').style.visibility="visible";
+        document.getElementById('dynamic_content').style.visibility="hidden";
+        
+    } 
+  }, [values.name])
 
-
-  // }, [values])
 
   return (
     <>
@@ -112,13 +132,13 @@ export default function App() {
               </div>
               <ul>
                 <div className="d-flex align-items-center py-3">
-                  <i className="fa fa-pinterest-p" aria-hidden="true"></i> &nbsp;&nbsp;   <li><a href="">Intigrations</a></li>
+                  <i className="fa fa-pinterest-p" aria-hidden="true"></i> &nbsp;&nbsp;   <li><a href="#Intigrations">Intigrations</a></li>
                 </div>
                 <div className="d-flex align-items-center py-3">
-                  <i className="fa fa-users" aria-hidden="true"></i> &nbsp;&nbsp; <li><a href="">Team</a></li>
+                  <i className="fa fa-users" aria-hidden="true"></i> &nbsp;&nbsp; <li><a href="#Team">Team</a></li>
                 </div>
                 <div className="d-flex align-items-center py-3">
-                  <i className="fa fa-comments" aria-hidden="true"></i> &nbsp;&nbsp; <li><a href="">Help/Support</a></li>
+                  <i className="fa fa-comments" aria-hidden="true"></i> &nbsp;&nbsp; <li><a href="#Help/Support">Help/Support</a></li>
                 </div>
               </ul>
 
@@ -127,7 +147,7 @@ export default function App() {
           </div>
 
 
-          <div className="col-md-10 bg-teal" id="TheContent">
+          <div className="col-md-10 bg-teal">
             <div className="searchbar d-md-block d-none">
               <input type="search" onChange={search} value={values.name} className="shadow topbar_search" placeholder="search by account name or website" />
             </div>
@@ -136,29 +156,29 @@ export default function App() {
 
 
               </div>
-              <div className="col-md-10 mx-auto mt-5 p-md-5 position-absolute pipline">
+              <div className="col-md-10 mx-auto mt-5 p-md-5 position-absolute pipline" id="TheContent">
 
-                 <div className="row justify-content-between">
+                <div className="row justify-content-between">
                   <div className="col-md-6 offset-md-1">
-                  <h1>Increase your pipeline</h1>
-                <h1>by <span style={{ color: "red" }}>35-150%</span></h1>
-                <p>Automated account intelligence for your account team.</p>
+                    <h1>Increase your pipeline</h1>
+                    <h1>by <span style={{ color: "red" }}>35-150%</span></h1>
+                    <p>Automated account intelligence for your account team.</p>
                   </div>
                   <div className="col-md-5">
                     <div className="jumping_girl">
                       <img src={girl} className="girl_img" alt="jumping girl" />
                     </div>
                   </div>
-                 </div>
+                </div>
               </div>
               <div className="col-md-12">
-                <div className="header">
+                <div className="header" id="dynamic_content">
                   <div className="elements">
                     {
-                      showData.map((item) => {
+                      showData.map((item, key) => {
                         return <div className="mapReturn">
                           <div className="pic">
-                            <div style={{ display: "flex", padding: "5px" }}>
+                            <div style={{ display: "flex", padding: "3px" }}>
                               <img src="" alt="img alt" />
                               <p>{item.vertical}</p>
                             </div>
@@ -180,7 +200,7 @@ export default function App() {
             </div>
 
             <div className="col-md-12 mx-auto">
-              <div className="Customcard">
+              <div className="Customcard" id="TheCustomCard">
                 <div className="">
                   <h1 className="text-center Trusted_h1 my-3">
                     Trusted by enterprise sales teams golobally.
@@ -196,51 +216,51 @@ export default function App() {
                 </div>
               </div>
             </div>
-             
 
-            <div className="row justify-content-center mb-2">
+
+            <div className="row justify-content-center mb-2" id="customerReview">
               <div className="col-auto">
                 <h1 className="Trusted_h1">Hear from our customer</h1>
               </div>
-              </div> 
+            </div>
 
-            <div className="row my-5 justify-content-center">
-              
+            <div className="row my-5 justify-content-center" id="TheCardReview">
+
               <div className="col-md-5 fontFam">
-                  <div className="d-flex leftcard ">
-                   <div className="d-flex shadow card p-3 flex-row justify-content-around align-items-center">
-                   
-                     <div className="d-flex  flex-column justify-content-between">
-                   
-                      <b className="py-1"><span ><i   className="fa fa-quote-left customerRe" aria-hidden="true"></i></span> set up a conversation with a <br />
-                      hard-to-crack-account, widthn a week 
-                      of starting with B2Brain.
-                       </b>
-                       
-                       <small>Augie Hoffmann, SDR Manager</small>
-                       <small>FOURKITES</small>
-                     </div>
-                     <img src={bman} className="img-fluid bman_img" alt="img" />
-                   </div>
+                <div className="d-flex leftcard ">
+                  <div className="d-flex shadow card p-3 flex-row justify-content-around align-items-center">
+
+                    <div className="d-flex  flex-column justify-content-between">
+
+                      <b className="py-1"><span ><i className="fa fa-quote-left customerRe" aria-hidden="true"></i></span> set up a conversation with a <br />
+                        hard-to-crack-account, widthn a week
+                        of starting with B2Brain.
+                      </b>
+
+                      <small>Augie Hoffmann, SDR Manager</small>
+                      <small>FOURKITES</small>
+                    </div>
+                    <img src={bman} className="img-fluid bman_img" alt="img" />
                   </div>
+                </div>
               </div>
               <div className="col-md-5">
-                 <div className="rightcard">
-                 <div className="d-flex shadow card p-3 flex-row justify-content-around align-items-center ">
-                   
-                   <div className="d-flex w-75 flex-column justify-content-between">
-                 
-                    <b className="py-1"><span ><i   className="fa fa-quote-left customerRe" aria-hidden="true"></i></span> set up a conversation with a <br />
-                    hard-to-crack-account, widthn a week
-                    of starting with B2Brain.
-                     </b>
-                     
-                     <small>Augie Hoffmann, SDR Manager</small>
-                     <small>FOURKITES</small>
-                   </div>
-                   <img src={bman} className="bman_img" alt="img" />
-                 </div>
-                 </div>
+                <div className="rightcard">
+                  <div className="d-flex shadow card p-3 flex-row justify-content-around align-items-center ">
+
+                    <div className="d-flex w-75 flex-column justify-content-between">
+
+                      <b className="py-1"><span ><i className="fa fa-quote-left customerRe" aria-hidden="true"></i></span> set up a conversation with a <br />
+                        hard-to-crack-account, widthn a week
+                        of starting with B2Brain.
+                      </b>
+
+                      <small>Augie Hoffmann, SDR Manager</small>
+                      <small>FOURKITES</small>
+                    </div>
+                    <img src={bman} className="bman_img" alt="img" />
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -256,16 +276,10 @@ export default function App() {
       {/* side bar */}
       {/* side bar */}
       {/* side bar */}
-
-
-
-
-
-
       {/* moblie side click menu */}
       {/* moblie side click menu */}
       <div className="container d-md-none d-block fixed-top " >
-        <div className="row justify-content-around align-items-center" style={{backgroundColor:"#eee"}}>
+        <div className="row justify-content-around align-items-center" style={{ backgroundColor: "#eee" }}>
           <div className="col-2">
             <div className="searchbar">
               <a className="btn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
@@ -296,7 +310,7 @@ export default function App() {
           <div className="offcanvas-body bg-secondary">
             <div className="sidebar">
 
-              <div className="logo mb-1 ">
+              <div className="logo mb-1">
                 <img src="" alt="" />
 
               </div>

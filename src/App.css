@@ -208,7 +208,7 @@ h1 {
 }
 
 .elements {
-    margin-top: 22rem;
+    margin-top: 15rem;
 }
 
 .mapReturn {
@@ -216,6 +216,7 @@ h1 {
     justify-content: space-between;
     margin: .75rem 0;
     flex-direction: row;
+    
 }
 
 .Trusted_h1 {
